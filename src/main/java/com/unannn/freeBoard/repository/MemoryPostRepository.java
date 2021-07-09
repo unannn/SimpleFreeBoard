@@ -22,7 +22,7 @@ public class MemoryPostRepository implements PostRepository {
         post.setPostNo(++sequence);
         post.setTitle("ㅁㄴㅇㄻㅇㄴㄹ");
         post.setWriterId("하마");
-        post.setViews("1");
+        post.setViews(1);
 
         return post;
     }
@@ -31,6 +31,7 @@ public class MemoryPostRepository implements PostRepository {
     public Post save(Post post) {
 
         post.setPostNo(++sequence);
+
         postStore.put(post.getPostNo(),post);
 
         return post;

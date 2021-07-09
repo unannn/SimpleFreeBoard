@@ -28,9 +28,6 @@
         td.post_no, td.writer_id, td.count{
             text-align:center;
         }
-        #write-button{
-            align:right;
-        }
     </style>
 </head>
 <body>
@@ -58,8 +55,8 @@
                 </tr>
                 </tbody>
             </table>
-            <div style="padding-right:20.2%; padding-left:20%;" >
-                <button id="write-button" type="button">글쓰기</button>
+            <div style="padding-right:20.2%; padding-left:20%;" align="right" >
+                <button id="write-button" type="button" onclick = "location.href = '/create-post' ">글쓰기</button>
             </div>
         </div>
     </div>

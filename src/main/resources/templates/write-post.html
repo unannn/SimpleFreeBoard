@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>새 글 작성</title>
+    <style>
+        #board{
+
+        }
+        #title{
+             padding-left:20%;
+             padding-right:20%;
+
+
+        }
+        h2{
+            border-left: 6px solid #000080;
+                         padding-left:3px;
+
+        }
+        .board-list{
+             padding-left:20%;
+             padding-right:20%;
+        }
+        tr{
+            border-bottom:1px solid;
+        }
+        td.post_no, td.writer_id, td.count{
+            text-align:center;
+        }
+        #write-button{
+            align:right;
+        }
+
+        #input-data{
+            padding-left:20%;
+            padding-right:20%;
+        }
+
+        #content, #post-info{
+            padding-left:10%;
+            padding-right:10%;
+        }
+
+    </style>
+</head>
+<body>
+<div id="write-board" >
+    <div id="title" align="left">
+        <h2>새 글 작성</h2>
+    </div>
+    <div id="input-data">
+        <form action="/create-post-process" accept-charset="utf-8" method="post">
+            <fieldset id="post-info">
+                <input style="width:65%;float:left;height:30px" name="title" type="text" placeholder="글 제목 입력">
+                <input style="width:25%;float:right;height:30px" name="writerId" type="text" placeholder="작성자 입력">
+            </fieldset>
+            <fieldset id="content">
+                    <p>글 내용</p>
+                    <textArea style="width:100%; resize:None;" name="content" align="center" rows="30">
+
+                    </textArea>
+            </fieldset>
+            <input type="submit" value="완료" style="float:right">
+        </form>
+    </div>
+</div>
+</body>
+</html>

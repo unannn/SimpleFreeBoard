@@ -10,7 +10,16 @@ public class Post {
    //@Column(name = "username")
     private String title;
     private String writerId;
-    private String views;
+    private int views;
+    private String content;
+    private String creationDate;
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Long getPostNo() {
         return postNo;
@@ -35,12 +44,19 @@ public class Post {
         this.writerId = writerId;
     }
 
-    public String getViews() {
+    public int getViews() {
         return views;
     }
 
-    public void setViews(String views) {
+    public void setViews(int views) {
         this.views = views;
     }
 
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
 }
