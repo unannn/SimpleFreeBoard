@@ -9,5 +9,4 @@ public class FreeBoardApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FreeBoardApplication.class, args);
 	}
-
 }

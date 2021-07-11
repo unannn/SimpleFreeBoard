@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>게시글</title>
+    <style>
+        #title{
+            padding-left:20%;
+            padding-right:20%;
+        }
+        h2{
+            border-left: 6px solid #000080;
+            padding-left:3px;
+        }
+        #total-content{
+            padding-left:20%;
+            padding-right:20%;
+        }
+        #content{
+            min-height:600px
+        }
+        .post-info{
+            float:right;
+        }
+    </style>
 </head>
 <body>
-
+<div id="write-board" >
+    <div id="title" align="left">
+        <h2>게시글</h2>
+    </div>
+    <div id="total-content">
+        <fieldset>
+            <div id="post-info">
+                <div>
+                    <div th:text="${post.title}" id="post-title" style="font-size:20px;float:left;margin-top:4%"></div>
+                    <div th:text="${'번호 : '+post.postNo}" id="post-no" style="float:right;"></div>
+                </div>
+                <br>
+                <div>
+                    <div class="post-info" th:text="${'글쓴이 : '+ post.writerId}" id="post-writer"></div>
+                    <br>
+                    <div class="post-info" th:text="${post.creationDate}" id="post-creationDate"></div>
+                    <br>
+                    <div class="post-info" th:text="${'조회수 : ' + post.views}" id="post-views"></div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div id="post-content">
+                <div id="content" th:text="${post.content}"></div>
+            </div>
+        </fieldset>
+        <div style="float:right;">
+            <button type="button" onclick = "location.href = '/'">목록</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

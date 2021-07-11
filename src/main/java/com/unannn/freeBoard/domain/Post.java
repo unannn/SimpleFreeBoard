@@ -13,6 +13,7 @@ public class Post {
     private int views;
     private String content;
     private String creationDate;
+
     public String getContent() {
         return content;
     }
@@ -28,6 +29,7 @@ public class Post {
     public void setPostNo(Long postNo) {
         this.postNo = postNo;
     }
+
     public String getTitle() {
         return title;
     }

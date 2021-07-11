@@ -1,20 +1,17 @@
 package com.unannn.freeBoard.controller;
 
 import com.unannn.freeBoard.domain.Post;
-import com.unannn.freeBoard.repository.PostRepository;
 import com.unannn.freeBoard.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class BoardController {
+
     private final PostService postService;
 
     @Autowired
@@ -29,13 +26,22 @@ public class BoardController {
         return "main";
     }
 
+    @RequestMapping(value="/post/{postNo}")
+    public String requestPostView( @PathVariable("postNo") Long postNo, Model model){
+        Post post = postService.getRequestPost(postNo);
+        post.setViews(post.getViews() + 1);
+        model.addAttribute("post",post);
+        System.out.println(post.getTitle());
+        return "page-view";
+    }
+
     @GetMapping("/create-post")
     public String createPost(){
         return "write-post";
     }
+
     @PostMapping("/create-post-process")
     public String createPostProcess(PostForm postForm){
-
         Post newPost = new Post();
 
         newPost.setTitle(postForm.getTitle());

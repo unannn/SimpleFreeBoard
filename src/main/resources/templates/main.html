@@ -49,14 +49,14 @@
                 <tbody>
                 <tr th:each="post : ${posts}">
                     <td th:text="${post.postNo}" class="post_no"></td>
-                    <td th:text="${post.title}" class="content_title"></td>
+                    <td class="content_title"><a th:href="${'/post/'+post.postNo}" th:text="${post.title}" ></a></td>
                     <td th:text="${post.writerId}" class="writer_id"></td>
                     <td th:text="${post.views}" class="count"></td>
                 </tr>
                 </tbody>
             </table>
             <div style="padding-right:20.2%; padding-left:20%;" align="right" >
-                <button id="write-button" type="button" onclick = "location.href = '/create-post' ">글쓰기</button>
+                <button id="write-button" type="button" onclick = "location.href = '/create-post'">글쓰기</button>
             </div>
         </div>
     </div>
